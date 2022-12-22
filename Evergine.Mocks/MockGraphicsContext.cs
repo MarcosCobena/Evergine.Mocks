@@ -7,8 +7,6 @@ namespace Evergine.Mocks
         public MockGraphicsContext()
         {
             base.Factory = new MockResourceFactory(this);
-            //PipelineStateCache = new DX11PipelineStateCache(this);
-            //capabilities = new DX11Capabilities(this);
         }
         
         public override IntPtr NativeDevicePointer => throw new NotImplementedException();
