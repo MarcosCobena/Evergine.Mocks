@@ -1,7 +1,5 @@
-using Evergine.Common.Graphics;
-using Evergine.Framework.Services;
+using Evergine.Framework;
 using Evergine.Mocks;
-using System.Diagnostics;
 using Xunit;
 
 namespace EvergineTest.Tests
@@ -12,17 +10,18 @@ namespace EvergineTest.Tests
         public void ChangeMyBooleanPropertyToTrueOnStart()
         {
             // Arrange
+            var component = new MyComponent();
+            var entity = new Entity()
+                .AddComponent(component);
+            var scene = new MockScene();
+            scene.Add(entity);
             var application = new MyApplication();
-            var windowsSystem = MockWindowsSystem.Create(application);
+            var windowsSystem = MockWindowsSystem.Create(application, scene);
 
             // Act
             windowsSystem.RunOneLoop();
 
             // Assert
-            var screenContextManager = application.Container.Resolve<ScreenContextManager>();
-            var scene = screenContextManager.CurrentContext.FindScene<MyScene>();
-            var entity = scene.Managers.EntityManager.Find("MyEntity");
-            var component = entity.FindComponent<MyComponent>();
             Assert.True(component.MyBooleanProperty);
         }
     }

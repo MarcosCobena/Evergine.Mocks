@@ -1,48 +1,49 @@
-using Evergine.Common.Graphics;
-using Evergine.Framework.Services;
+using Evergine.Framework;
 using Evergine.Mocks;
-using System.Diagnostics;
 using Xunit;
 
 namespace EvergineTest.Tests
 {
     public class MyBehaviorShould
     {
+        private readonly MyBehavior component;
+
+        private readonly MockWindowsSystem windowsSystem;
+
+        public MyBehaviorShould()
+        {
+            this.component = new MyBehavior();
+            var entity = new Entity()
+                .AddComponent(component);
+            var scene = new MockScene();
+            scene.Add(entity);
+            var application = new MyApplication();
+            this.windowsSystem = MockWindowsSystem.Create(application, scene);
+        }
+
         [Fact]
         public void KeepMyBooleanPropertyFalseOnStart()
         {
             // Arrange
-            var application = new MyApplication();
-            var windowsSystem = MockWindowsSystem.Create(application);
 
             // Act
-            windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop();
 
             // Assert
-            var screenContextManager = application.Container.Resolve<ScreenContextManager>();
-            var scene = screenContextManager.CurrentContext.FindScene<MyScene>();
-            var entity = scene.Managers.EntityManager.Find("MyEntity");
-            var component = entity.FindComponent<MyBehavior>();
-            Assert.False(component.MyBooleanProperty);
+            Assert.False(this.component.MyBooleanProperty);
         }
 
         [Fact]
         public void ChangeMyBooleanPropertyToTrueAfterTwoLoops()
         {
             // Arrange
-            var application = new MyApplication();
-            var windowsSystem = MockWindowsSystem.Create(application);
 
             // Act
-            windowsSystem.RunOneLoop();
-            windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop();
 
             // Assert
-            var screenContextManager = application.Container.Resolve<ScreenContextManager>();
-            var scene = screenContextManager.CurrentContext.FindScene<MyScene>();
-            var entity = scene.Managers.EntityManager.Find("MyEntity");
-            var component = entity.FindComponent<MyBehavior>();
-            Assert.True(component.MyBooleanProperty);
+            Assert.True(this.component.MyBooleanProperty);
         }
     }
 }

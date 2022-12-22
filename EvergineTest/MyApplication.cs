@@ -1,6 +1,5 @@
 using Evergine.Framework;
 using Evergine.Framework.Services;
-using Evergine.Framework.Threading;
 using Evergine.Platform;
 
 namespace EvergineTest
@@ -26,6 +25,11 @@ namespace EvergineTest
         {
             base.Initialize();
 
+            // Intentionally empty
+        }
+
+        public void NavigateToMainScene()
+        {
             // Get ScreenContextManager
             var screenContextManager = this.Container.Resolve<ScreenContextManager>();
             var assetsService = this.Container.Resolve<AssetsService>();

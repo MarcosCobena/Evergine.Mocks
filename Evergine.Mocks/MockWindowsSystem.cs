@@ -1,5 +1,6 @@
 ﻿using Evergine.Common.Graphics;
 using Evergine.Framework;
+using Evergine.Framework.Services;
 using System.Diagnostics;
 
 namespace Evergine.Mocks
@@ -38,7 +39,7 @@ namespace Evergine.Mocks
             this.renderCallback?.Invoke();
         }
 
-        public static MockWindowsSystem Create(Application application)
+        public static MockWindowsSystem Create(Application application, Scene scene)
         {
             var instance = new MockWindowsSystem();
             application.Container.RegisterInstance(instance);
@@ -68,6 +69,9 @@ namespace Evergine.Mocks
                 () =>
                 {
                     application.Initialize();
+                    var screenContextManager = application.Container.Resolve<ScreenContextManager>();
+                    var screenContext = new ScreenContext(scene);
+                    screenContextManager.To(screenContext);
                 },
                 () =>
                 {

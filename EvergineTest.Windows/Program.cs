@@ -62,6 +62,7 @@ namespace EvergineTest.Windows
             () =>
             {
                 application.Initialize();
+                application.NavigateToMainScene();
             },
             () =>
             {
