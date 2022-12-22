@@ -19,5 +19,6 @@ Such components, usually, consume other artifacts from outside:
 - services
 - managers
 - entities from its hierarchy
+
 Beacause of this, isolating a component for testing is quite complicated.
 However, we can rely on a mock Windows System which, in a headless fashion, replicates the same behavior the app would have.
