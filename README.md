@@ -22,3 +22,15 @@ Such components, usually, consume other artifacts from outside:
 
 Beacause of this, isolating a component for testing is quite complicated.
 However, we can rely on a mock Windows System which, in a headless fashion, replicates the same behavior the app would have.
+
+## Status
+
+[x] Support running single update-draw loop on demand
+[x] Support reading actual Content
+[x] Support BindComponent attribute
+[x] Support BindService attribute
+[ ] Support Camera3D.Display size
+
+### Changes needed in Evergine
+
+- New GraphicsBackend value: Mock, None, Test
