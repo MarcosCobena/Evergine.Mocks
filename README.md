@@ -25,11 +25,11 @@ However, we can rely on a mock Windows System which, in a headless fashion, repl
 
 ## Status
 
-[x] Support running single update-draw loop on demand
-[x] Support reading actual Content
-[x] Support BindComponent attribute
-[x] Support BindService attribute
-[ ] Support Camera3D.Display size
+- [x] Support running single update-draw loop on demand
+- [x] Support reading actual Content
+- [x] Support BindComponent attribute
+- [x] Support BindService attribute
+- [ ] Support Camera3D.Display size
 
 ### Changes needed in Evergine
 
