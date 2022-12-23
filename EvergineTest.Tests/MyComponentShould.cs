@@ -16,7 +16,8 @@ namespace EvergineTest.Tests
             this.component = new MyComponent();
             var entity = new Entity()
                 .AddComponent(component)
-                .AddComponent(new Transform3D());
+                .AddComponent(new Transform3D())
+                .AddComponent(new Camera3D());
             var scene = new MockScene();
             scene.Add(entity);
             var application = new MyApplication();

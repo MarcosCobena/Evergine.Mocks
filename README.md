@@ -29,7 +29,7 @@ However, we can rely on a mock Windows System which, in a headless fashion, repl
 - [x] Support reading actual Content
 - [x] Support BindComponent attribute
 - [x] Support BindService attribute
-- [ ] Support Camera3D.Display size
+- [x] Support Camera3D.Display
 
 ### Changes needed in Evergine
 

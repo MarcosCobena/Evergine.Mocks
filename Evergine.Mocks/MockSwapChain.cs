@@ -4,11 +4,8 @@ namespace Evergine.Mocks
 {
     internal class MockSwapChain : SwapChain
     {
-        private SwapChainDescription description;
-
-        public MockSwapChain(SwapChainDescription description)
+        public MockSwapChain(SwapChainDescription _)
         {
-            this.description = description;
         }
 
         public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -25,7 +22,7 @@ namespace Evergine.Mocks
 
         public override void Present()
         {
-            throw new NotImplementedException();
+            // Intentionally empty
         }
 
         public override void RefreshSurfaceInfo(SurfaceInfo surfaceInfo)

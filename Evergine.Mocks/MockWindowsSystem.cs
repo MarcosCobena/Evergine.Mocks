@@ -1,5 +1,6 @@
 ﻿using Evergine.Common.Graphics;
 using Evergine.Framework;
+using Evergine.Framework.Graphics;
 using Evergine.Framework.Services;
 using System.Diagnostics;
 
@@ -25,7 +26,7 @@ namespace Evergine.Mocks
 
         public override Window CreateWindow(string title, uint width, uint height, bool visible = true)
         {
-            throw new NotImplementedException();
+            return new MockWindow(title, width, height);
         }
         
         protected override void CreateLoopThread(Action loadAction, Action renderCallback)
@@ -43,26 +44,24 @@ namespace Evergine.Mocks
         {
             var instance = new MockWindowsSystem();
             application.Container.RegisterInstance(instance);
+            const uint width = 1280;
+            const uint height = 720;
+            var window = instance.CreateWindow(string.Empty, width, height);
             var graphicsContext = new MockGraphicsContext();
             graphicsContext.CreateDevice();
             var swapChainDescription = new SwapChainDescription()
             {
-                //SurfaceInfo = window.SurfaceInfo,
-                //Width = window.Width,
-                //Height = window.Height,
                 ColorTargetFormat = PixelFormat.R8G8B8A8_UNorm,
                 ColorTargetFlags = TextureFlags.RenderTarget | TextureFlags.ShaderResource,
                 DepthStencilTargetFormat = PixelFormat.D24_UNorm_S8_UInt,
                 DepthStencilTargetFlags = TextureFlags.DepthStencil,
                 SampleCount = TextureSampleCount.None,
-                //IsWindowed = Windowed,
                 RefreshRate = 60
             };
             var swapChain = graphicsContext.CreateSwapChain(swapChainDescription);
-            //swapChain.VerticalSync = VSync;
-            //var graphicsPresenter = application.Container.Resolve<GraphicsPresenter>();
-            //var firstDisplay = new Display(window, swapChain);
-            //graphicsPresenter.AddDisplay("DefaultDisplay", firstDisplay);
+            var graphicsPresenter = application.Container.Resolve<GraphicsPresenter>();
+            var firstDisplay = new Display(window, swapChain);
+            graphicsPresenter.AddDisplay("DefaultDisplay", firstDisplay);
             application.Container.RegisterInstance(graphicsContext);
             var clockTimer = Stopwatch.StartNew();
             instance.Run(
