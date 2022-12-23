@@ -30,6 +30,27 @@ However, we can rely on a mock Windows System which, in a headless fashion, repl
 - [x] Support BindComponent attribute
 - [x] Support BindService attribute
 - [x] Support Camera3D.Display
+- [ ] Support custom Keyboard/Mouse/TouchDispatcher
+
+### Changes needed in our projects
+
+- Leave Application.Initialize() empty: refactor its entire logic into a separate public method, called from each WindowsSystem
+    - This is needed to avoid tests to set the ScreenContext up and navigate to an actual Scene by default
+
+```csharp
+windowsSystem.Run(
+    () =>
+    {
+        // Pull initialization logic from here...
+        application.Initialize();
+        // to here
+        application.NavigateToMainScene();
+    },
+    () =>
+    {
+        [...]
+    });
+```
 
 ### Changes needed in Evergine
 
