@@ -9,9 +9,15 @@ namespace Evergine.Mocks
     {
         private Action? renderCallback;
 
+        private MockWindow? mockWindow;
+
         private MockWindowsSystem()
         {
         }
+
+        public MockKeyboardDispatcher? KeyboardDispatcher => (MockKeyboardDispatcher?)this.mockWindow?.KeyboardDispatcher;
+
+        public MockMouseDispatcher? MouseDispatcher => (MockMouseDispatcher?)this.mockWindow?.MouseDispatcher;
 
         public override Surface CreateSurface(uint width, uint height)
         {
@@ -25,7 +31,9 @@ namespace Evergine.Mocks
 
         public override Window CreateWindow(string title, uint width, uint height, bool visible = true)
         {
-            return new MockWindow(title, width, height);
+            this.mockWindow = new MockWindow(title, width, height);
+
+            return this.mockWindow;
         }
 
         protected override void CreateLoopThread(Action loadAction, Action renderCallback)

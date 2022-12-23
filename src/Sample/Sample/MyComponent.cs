@@ -13,7 +13,7 @@ namespace Sample
         [BindService]
         protected GraphicsContext graphicsContext;
 
-        [BindComponent]
+        [BindComponent(source: BindComponentSource.Scene)]
         protected Camera3D camera;
 
         public bool MyBooleanProperty { get; private set; }
