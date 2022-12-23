@@ -33,7 +33,9 @@ However, we can rely on a mock Windows System which, in a headless fashion, repl
 - [x] Support BindComponent attribute
 - [x] Support BindService attribute
 - [x] Support Camera3D.Display
-- [ ] Support custom Keyboard/Mouse/TouchDispatcher
+- [ ] WIP Support custom KeyboardDispatcher
+- [ ] WIP Support custom MouseDispatcher
+- [ ] Support custom TouchDispatcher
 
 ### Changes needed in our projects
 
