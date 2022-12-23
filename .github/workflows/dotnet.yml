@@ -21,4 +21,4 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Test
-      run: dotnet test --verbosity normal EvergineTest.Tests/EvergineTest.Tests.csproj
+      run: dotnet test --verbosity normal src/EvergineTest.Tests/EvergineTest.Tests.csproj
