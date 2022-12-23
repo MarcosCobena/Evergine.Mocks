@@ -1,4 +1,4 @@
-using Evergine.Framework;
+﻿using Evergine.Framework;
 using Evergine.Framework.Graphics;
 using Evergine.Mocks;
 using Xunit;
@@ -15,7 +15,7 @@ namespace EvergineTest.Tests
         {
             this.component = new MyComponent();
             var entity = new Entity()
-                .AddComponent(component)
+                .AddComponent(this.component)
                 .AddComponent(new Transform3D())
                 .AddComponent(new Camera3D());
             var scene = new MockScene();
@@ -23,6 +23,7 @@ namespace EvergineTest.Tests
             var application = new MyApplication();
             this.windowsSystem = MockWindowsSystem.Create(application, scene);
         }
+
         [Fact]
         public void KeepMyBooleanPropertyFalseBeforeStarting()
         {
@@ -33,16 +34,17 @@ namespace EvergineTest.Tests
             // Assert
             Assert.False(this.component.MyBooleanProperty);
         }
+
         [Fact]
         public void ChangeMyBooleanPropertyToTrueOnStart()
         {
             // Arrange
-            
+
             // Act
-            windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop();
 
             // Assert
-            Assert.True(component.MyBooleanProperty);
+            Assert.True(this.component.MyBooleanProperty);
         }
     }
 }

@@ -1,3 +1,3 @@
-using Evergine.Common.Attributes;
+﻿using Evergine.Common.Attributes;
 
 [assembly: EvergineAssembly(EvergineAssemblyUsage.UserProject)]

@@ -4,7 +4,8 @@ namespace Evergine.Mocks
 {
     internal class MockSamplerState : SamplerState
     {
-        public MockSamplerState(GraphicsContext context, ref SamplerStateDescription description) : base(context, ref description)
+        public MockSamplerState(GraphicsContext context, ref SamplerStateDescription description)
+            : base(context, ref description)
         {
         }
 

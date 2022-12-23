@@ -1,0 +1,8 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" 
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<Import Project="$(MSBuildThisFileDirectory)\StyleCop\stylecop.props" Condition="$(DisableStyleCop) != 'true'" />
+
+	<Import Project="$(MSBuildThisFileDirectory)\StyleCop\stylecop.targets" Condition="$(DisableStyleCop) != 'true'" />
+
+</Project>

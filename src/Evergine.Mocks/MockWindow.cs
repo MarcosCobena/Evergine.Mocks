@@ -7,7 +7,8 @@ namespace Evergine.Mocks
 {
     internal class MockWindow : Window
     {
-        public MockWindow(string title, uint width, uint height) : base(title, width, height)
+        public MockWindow(string title, uint width, uint height)
+            : base(title, width, height)
         {
             this.KeyboardDispatcher = new MockKeyboardDispatcher();
             this.MouseDispatcher = new MockMouseDispatcher();

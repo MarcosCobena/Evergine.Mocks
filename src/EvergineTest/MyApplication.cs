@@ -1,4 +1,4 @@
-using Evergine.Framework;
+﻿using Evergine.Framework;
 using Evergine.Framework.Services;
 using Evergine.Platform;
 

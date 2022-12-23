@@ -4,7 +4,7 @@ namespace Evergine.Mocks
 {
     internal class MockSwapChain : SwapChain
     {
-        public MockSwapChain(SwapChainDescription _)
+        public MockSwapChain(SwapChainDescription swapChainDescription)
         {
         }
 

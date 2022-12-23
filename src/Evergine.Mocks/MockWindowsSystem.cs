@@ -11,7 +11,7 @@ namespace Evergine.Mocks
         private Action? renderCallback;
 
         private MockWindowsSystem()
-        { 
+        {
         }
 
         public override Surface CreateSurface(uint width, uint height)
@@ -28,7 +28,7 @@ namespace Evergine.Mocks
         {
             return new MockWindow(title, width, height);
         }
-        
+
         protected override void CreateLoopThread(Action loadAction, Action renderCallback)
         {
             loadAction();
@@ -56,7 +56,7 @@ namespace Evergine.Mocks
                 DepthStencilTargetFormat = PixelFormat.D24_UNorm_S8_UInt,
                 DepthStencilTargetFlags = TextureFlags.DepthStencil,
                 SampleCount = TextureSampleCount.None,
-                RefreshRate = 60
+                RefreshRate = 60,
             };
             var swapChain = graphicsContext.CreateSwapChain(swapChainDescription);
             var graphicsPresenter = application.Container.Resolve<GraphicsPresenter>();

@@ -4,7 +4,7 @@ namespace Evergine.Mocks
 {
     internal class MockCommandQueue : CommandQueue
     {
-        public MockCommandQueue(CommandQueueType _)
+        public MockCommandQueue(CommandQueueType commandQueueType)
         {
         }
 

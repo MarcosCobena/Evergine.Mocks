@@ -8,7 +8,7 @@ namespace EvergineTest
         private bool isFirstTime;
 
         public MyBehavior()
-        { 
+        {
             this.isFirstTime = true;
         }
 
@@ -16,12 +16,12 @@ namespace EvergineTest
 
         protected override void Update(TimeSpan gameTime)
         {
-            if (isFirstTime)
+            if (this.isFirstTime)
             {
                 this.isFirstTime = false;
             }
             else
-            { 
+            {
                 this.MyBooleanProperty = true;
             }
         }

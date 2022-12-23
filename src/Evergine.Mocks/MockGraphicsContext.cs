@@ -6,9 +6,9 @@ namespace Evergine.Mocks
     {
         public MockGraphicsContext()
         {
-            base.Factory = new MockResourceFactory(this);
+            this.Factory = new MockResourceFactory(this);
         }
-        
+
         public override IntPtr NativeDevicePointer => throw new NotImplementedException();
 
         // TODO add new Test backend, for instance

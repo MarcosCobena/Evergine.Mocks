@@ -1,4 +1,4 @@
-using Evergine.Framework;
+﻿using Evergine.Framework;
 using Evergine.Mocks;
 using Xunit;
 
@@ -14,7 +14,7 @@ namespace EvergineTest.Tests
         {
             this.component = new MyBehavior();
             var entity = new Entity()
-                .AddComponent(component);
+                .AddComponent(this.component);
             var scene = new MockScene();
             scene.Add(entity);
             var application = new MyApplication();
