@@ -25,5 +25,14 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 6.0.x
+      # Test reporting based on: https://rakesh-suryawanshi.medium.com/unit-testing-report-with-github-actions-7216f340044e
       - name: Test
-        run: dotnet test --verbosity normal src/Sample/Sample.Tests/Sample.Tests.csproj
+        run: dotnet test src/Sample/Sample.Tests/Sample.Tests.csproj --logger "trx;LogFileName=test-results.trx" || true
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Tests
+          path: "**/test-results.trx"                            
+          reporter: dotnet-trx
+          fail-on-error: true
