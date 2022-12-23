@@ -7,7 +7,7 @@ using Evergine.Platform;
 using System;
 using System.Diagnostics;
 
-namespace EvergineTest.Windows
+namespace Sample.Windows
 {
     class Program
     {
@@ -49,7 +49,7 @@ namespace EvergineTest.Windows
             // Create Services
             WindowsSystem windowsSystem = new Evergine.Forms.FormsWindowsSystem();
             application.Container.RegisterInstance(windowsSystem);
-            var window = windowsSystem.CreateWindow("EvergineTest - DX11", width, height);
+            var window = windowsSystem.CreateWindow("Sample - DX11", width, height);
 
             ConfigureGraphicsContext(application, window);
 			

@@ -225,10 +225,10 @@ Items:
           X: 1.0
           Y: 1.0
           Z: 1.0
-      - !EvergineTest.MyComponent,EvergineTest
+      - !Sample.MyComponent,Sample
         Id: d28153ca-4753-4f75-b64a-e901e085b019
         IsEnabled: true
-      - !EvergineTest.MyBehavior,EvergineTest
+      - !Sample.MyBehavior,Sample
         Id: 80e04f15-37d8-40e7-b75b-87f00a397b17
         IsEnabled: true
         UpdateOrder: 0.5

@@ -3,7 +3,7 @@ using Evergine.Framework;
 using Evergine.Framework.Graphics;
 using System.Diagnostics;
 
-namespace EvergineTest
+namespace Sample
 {
     public class MyComponent : Component
     {

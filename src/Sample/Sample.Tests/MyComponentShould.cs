@@ -3,7 +3,7 @@ using Evergine.Framework.Graphics;
 using Evergine.Mocks;
 using Xunit;
 
-namespace EvergineTest.Tests
+namespace Sample.Tests
 {
     public class MyComponentShould
     {

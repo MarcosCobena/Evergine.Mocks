@@ -1,6 +1,6 @@
 ﻿using Evergine.Framework;
 
-namespace EvergineTest
+namespace Sample
 {
     public class MyScene : Scene
     {

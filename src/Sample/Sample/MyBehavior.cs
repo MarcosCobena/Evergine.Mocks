@@ -1,7 +1,7 @@
 ﻿using Evergine.Framework;
 using System;
 
-namespace EvergineTest
+namespace Sample
 {
     public class MyBehavior : Behavior
     {

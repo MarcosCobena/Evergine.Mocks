@@ -2,7 +2,7 @@
 using Evergine.Mocks;
 using Xunit;
 
-namespace EvergineTest.Tests
+namespace Sample.Tests
 {
     public class MyBehaviorShould
     {

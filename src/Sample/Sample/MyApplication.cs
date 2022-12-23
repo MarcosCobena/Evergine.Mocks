@@ -2,7 +2,7 @@
 using Evergine.Framework.Services;
 using Evergine.Platform;
 
-namespace EvergineTest
+namespace Sample
 {
     public partial class MyApplication : Application
     {
