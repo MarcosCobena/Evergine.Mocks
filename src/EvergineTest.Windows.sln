@@ -6,8 +6,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvergineTest.Windows", "Eve
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvergineTest", "EvergineTest\EvergineTest.csproj", "{FDD04AAD-6290-47C5-9F72-099A289325BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvergineTest.Editor", "EvergineTest.Editor\EvergineTest.Editor.csproj", "{95780E7C-D9B2-46ED-8D18-4DF0A33A3D6F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvergineTest.Tests", "EvergineTest.Tests\EvergineTest.Tests.csproj", "{27E438E1-DF59-4CAF-B258-122DB201D99D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evergine.Mocks", "Evergine.Mocks\Evergine.Mocks.csproj", "{1FD6C900-1F5D-4810-9F31-47D619C40BC8}"
@@ -31,10 +29,6 @@ Global
 		{FDD04AAD-6290-47C5-9F72-099A289325BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDD04AAD-6290-47C5-9F72-099A289325BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDD04AAD-6290-47C5-9F72-099A289325BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95780E7C-D9B2-46ED-8D18-4DF0A33A3D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95780E7C-D9B2-46ED-8D18-4DF0A33A3D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95780E7C-D9B2-46ED-8D18-4DF0A33A3D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95780E7C-D9B2-46ED-8D18-4DF0A33A3D6F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{27E438E1-DF59-4CAF-B258-122DB201D99D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{27E438E1-DF59-4CAF-B258-122DB201D99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27E438E1-DF59-4CAF-B258-122DB201D99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
