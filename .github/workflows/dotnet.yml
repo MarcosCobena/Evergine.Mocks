@@ -7,9 +7,13 @@ on:
   push:
     branches: ["main"]
     paths:
+      - '.github/**'
       - 'src/**'
   pull_request:
     branches: ["main"]
+    paths:
+      - '.github/**'
+      - 'src/**'
 
 jobs:
   build:
