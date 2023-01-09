@@ -2,6 +2,7 @@
 using Evergine.Framework;
 using Evergine.Framework.Graphics;
 using Evergine.Framework.Services;
+using System.Diagnostics;
 
 namespace Evergine.Mocks
 {
@@ -70,9 +71,7 @@ namespace Evergine.Mocks
             var firstDisplay = new Display(window, swapChain);
             graphicsPresenter.AddDisplay("DefaultDisplay", firstDisplay);
             application.Container.RegisterInstance(graphicsContext);
-            float oneFrameLengthMilliseconds = 1000f / swapChainDescription.RefreshRate;
-            var oneFrameLength = TimeSpan.FromMilliseconds(oneFrameLengthMilliseconds);
-            var gameTime = TimeSpan.Zero;
+            var clockTimer = Stopwatch.StartNew();
             instance.Run(
                 () =>
                 {
@@ -83,7 +82,9 @@ namespace Evergine.Mocks
                 },
                 () =>
                 {
-                    gameTime += oneFrameLength;
+                    var gameTime = clockTimer.Elapsed;
+                    clockTimer.Restart();
+
                     application.UpdateFrame(gameTime);
                     application.DrawFrame(gameTime);
                 });
