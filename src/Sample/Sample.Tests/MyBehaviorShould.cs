@@ -102,6 +102,7 @@ namespace Sample.Tests
 
             // Act
             this.windowsSystem.RunOneLoop();
+            mouseDispatcher.Enter(0, 0);
             mouseDispatcher.Press(MouseButtons.Left);
             mouseDispatcher.Move(100, 0);
             this.windowsSystem.RunOneLoop();

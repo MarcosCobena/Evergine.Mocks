@@ -36,5 +36,15 @@ namespace Evergine.Mocks
         {
             this.HandleMouseScroll(direction);
         }
+
+        public void Enter(int x, int y)
+        {
+            this.HandleMouseEnter(new Point(x, y));
+        }
+
+        public void Leave(int x, int y)
+        {
+            this.HandleMouseLeave(new Point(x, y));
+        }
     }
 }
