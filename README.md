@@ -28,14 +28,14 @@ However, we can rely on a mock Windows System which, in a headless fashion, repl
 
 ## Status
 
-- [x] Support running single update-draw loop on demand
-- [x] Support reading actual Content
-- [x] Support BindComponent attribute
-- [x] Support BindService attribute
-- [x] Support Camera3D.Display
-- [ ] WIP Support custom KeyboardDispatcher
-- [ ] WIP Support custom MouseDispatcher
-- [ ] Support custom TouchDispatcher
+- [x] running single update-draw loop on demand
+- [x] reading actual Content
+- [x] BindComponent attribute
+- [x] BindService attribute
+- [x] Camera3D.Display
+- [x] mock KeyboardDispatcher
+- [x] mock MouseDispatcher
+- [ ] mock TouchDispatcher
 
 ### Changes needed in our projects
 
