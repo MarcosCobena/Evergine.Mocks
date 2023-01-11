@@ -18,5 +18,10 @@ namespace Evergine.Mocks
         {
             this.HandleKeyChar(character);
         }
+
+        public void Type(string characters)
+        {
+            this.HandleKeyChar(characters);
+        }
     }
 }
