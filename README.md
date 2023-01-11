@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository looks for ways of testing applications made with Evergine, inspired on [Xamarin.Forms.Mocks](https://github.com/jonathanpeppers/Xamarin.Forms.Mocks).
+Library to enable testing applications made with Evergine, inspired on [Xamarin.Forms.Mocks](https://github.com/jonathanpeppers/Xamarin.Forms.Mocks).
 
 Goals:
 
