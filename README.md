@@ -57,6 +57,10 @@ windowsSystem.Run(
     });
 ```
 
+- Execute tests sequentially: Evergine currently does not support running tests in parallel
+  - You can see how to do it with xUnit [here](https://github.com/MarcosCobena/Evergine.Mocks/blob/main/src/Sample/Sample.Tests/AssemblyInfo.cs)
+
 ### Changes needed in Evergine
 
 - New GraphicsBackend value: Mock, None, Test
+- Maybe: Allow running tests in parallel (it seems there are some static references preventing such)
