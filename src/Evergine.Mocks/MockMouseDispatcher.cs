@@ -5,16 +5,20 @@ namespace Evergine.Mocks
 {
     public class MockMouseDispatcher : MouseDispatcher
     {
-        public override CursorTypes CursorType => throw new NotImplementedException();
+        private CursorTypes currentCursorType;
+
+        public override CursorTypes CursorType => this.currentCursorType;
 
         public override bool TrySetCursorType(CursorTypes cursorType)
         {
-            throw new NotImplementedException();
+            this.currentCursorType = cursorType;
+
+            return true;
         }
 
         protected override bool NativeSetCursorPosition(Point position)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public void Press(MouseButtons button)
