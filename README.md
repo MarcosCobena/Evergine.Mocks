@@ -10,7 +10,6 @@ Library to enable testing applications made with Evergine, inspired on [Xamarin.
 Goals:
 
 - Enable testing components and behaviors
-- Provide an artifact ([NuGet](https://www.nuget.org/packages/Evergine.Mocks), ideally) to be consumed by our real-world projects
 
 Out of scope:
 
