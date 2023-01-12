@@ -1,5 +1,8 @@
 # Evergine.Mocks
 
+![Tests status](https://github.com/MarcosCobena/Evergine.Mocks/actions/workflows/dotnet.yml/badge.svg)
+![Nuget](https://img.shields.io/nuget/v/Evergine.Mocks)
+
 ## Introduction
 
 Library to enable testing applications made with Evergine, inspired on [Xamarin.Forms.Mocks](https://github.com/jonathanpeppers/Xamarin.Forms.Mocks).
