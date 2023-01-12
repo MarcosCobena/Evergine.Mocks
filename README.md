@@ -1,7 +1,7 @@
 # Evergine.Mocks
 
-![Tests status](https://github.com/MarcosCobena/Evergine.Mocks/actions/workflows/dotnet.yml/badge.svg)
-![Nuget](https://img.shields.io/nuget/v/Evergine.Mocks)
+[![Tests status](https://github.com/MarcosCobena/Evergine.Mocks/actions/workflows/dotnet.yml/badge.svg)](https://github.com/MarcosCobena/Evergine.Mocks/actions/workflows/dotnet.yml)
+[![Nuget](https://img.shields.io/nuget/v/Evergine.Mocks)](https://www.nuget.org/packages/Evergine.Mocks)
 
 ## Introduction
 
