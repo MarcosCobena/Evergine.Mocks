@@ -3,6 +3,7 @@ using Evergine.Common.Input.Mouse;
 using Evergine.Framework;
 using Evergine.Framework.Graphics;
 using Evergine.Mocks;
+using System;
 using Xunit;
 
 namespace Sample.Tests
@@ -12,6 +13,8 @@ namespace Sample.Tests
         private readonly MyBehavior component;
 
         private readonly MockWindowsSystem windowsSystem;
+
+        private readonly TimeSpan fixedElapsedTime = TimeSpan.FromSeconds(1d / 60);
 
         public MyBehaviorShould()
         {
@@ -32,7 +35,7 @@ namespace Sample.Tests
             // Arrange
 
             // Act
-            this.windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop(this.fixedElapsedTime);
 
             // Assert
             Assert.False(this.component.MyBooleanProperty);
@@ -44,8 +47,8 @@ namespace Sample.Tests
             // Arrange
 
             // Act
-            this.windowsSystem.RunOneLoop();
-            this.windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop(this.fixedElapsedTime);
+            this.windowsSystem.RunOneLoop(this.fixedElapsedTime);
 
             // Assert
             Assert.True(this.component.MyBooleanProperty);
@@ -57,8 +60,8 @@ namespace Sample.Tests
             // Arrange
 
             // Act
-            this.windowsSystem.RunOneLoop();
-            this.windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop(this.fixedElapsedTime);
+            this.windowsSystem.RunOneLoop(this.fixedElapsedTime);
 
             // Assert
             var transform3D = this.component.Owner.FindComponent<Transform3D>();
@@ -71,9 +74,9 @@ namespace Sample.Tests
             // Arrange
 
             // Act
-            this.windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop(this.fixedElapsedTime);
             this.windowsSystem.KeyboardDispatcher?.Press(Keys.Up);
-            this.windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop(this.fixedElapsedTime);
 
             // Assert
             var transform3D = this.component.Owner.FindComponent<Transform3D>();
@@ -86,8 +89,8 @@ namespace Sample.Tests
             // Arrange
 
             // Act
-            this.windowsSystem.RunOneLoop();
-            this.windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop(this.fixedElapsedTime);
+            this.windowsSystem.RunOneLoop(this.fixedElapsedTime);
 
             // Assert
             var transform3D = this.component.Owner.FindComponent<Transform3D>();
@@ -101,11 +104,11 @@ namespace Sample.Tests
             var mouseDispatcher = this.windowsSystem.MouseDispatcher!;
 
             // Act
-            this.windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop(this.fixedElapsedTime);
             mouseDispatcher.Enter(0, 0);
             mouseDispatcher.Press(MouseButtons.Left);
             mouseDispatcher.Move(100, 0);
-            this.windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop(this.fixedElapsedTime);
 
             // Assert
             var transform3D = this.component.Owner.FindComponent<Transform3D>();

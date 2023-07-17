@@ -2,7 +2,6 @@
 using Evergine.Framework;
 using Evergine.Framework.Graphics;
 using Evergine.Framework.Services;
-using System.Diagnostics;
 
 namespace Evergine.Mocks
 {
@@ -11,6 +10,8 @@ namespace Evergine.Mocks
         private Action? renderCallback;
 
         private MockWindow? mockWindow;
+
+        private static TimeSpan? nextRenderCallbackElapsedTime;
 
         private MockWindowsSystem()
         {
@@ -37,14 +38,9 @@ namespace Evergine.Mocks
             return this.mockWindow;
         }
 
-        protected override void CreateLoopThread(Action loadAction, Action renderCallback)
+        public void RunOneLoop(TimeSpan elapsedTime)
         {
-            loadAction();
-            this.renderCallback = renderCallback;
-        }
-
-        public void RunOneLoop()
-        {
+            nextRenderCallbackElapsedTime = elapsedTime;
             this.renderCallback?.Invoke();
         }
 
@@ -71,7 +67,6 @@ namespace Evergine.Mocks
             var firstDisplay = new Display(window, swapChain);
             graphicsPresenter.AddDisplay("DefaultDisplay", firstDisplay);
             application.Container.RegisterInstance(graphicsContext);
-            var clockTimer = Stopwatch.StartNew();
             instance.Run(
                 () =>
                 {
@@ -82,14 +77,17 @@ namespace Evergine.Mocks
                 },
                 () =>
                 {
-                    var gameTime = clockTimer.Elapsed;
-                    clockTimer.Restart();
-
-                    application.UpdateFrame(gameTime);
-                    application.DrawFrame(gameTime);
+                    application.UpdateFrame(nextRenderCallbackElapsedTime!.Value);
+                    application.DrawFrame(nextRenderCallbackElapsedTime.Value);
                 });
 
             return instance;
+        }
+
+        protected override void CreateLoopThread(Action loadAction, Action renderCallback)
+        {
+            loadAction();
+            this.renderCallback = renderCallback;
         }
     }
 }

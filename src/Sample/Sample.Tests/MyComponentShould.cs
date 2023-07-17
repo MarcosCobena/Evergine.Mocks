@@ -1,6 +1,7 @@
 ﻿using Evergine.Framework;
 using Evergine.Framework.Graphics;
 using Evergine.Mocks;
+using System;
 using Xunit;
 
 namespace Sample.Tests
@@ -41,7 +42,7 @@ namespace Sample.Tests
             // Arrange
 
             // Act
-            this.windowsSystem.RunOneLoop();
+            this.windowsSystem.RunOneLoop(TimeSpan.FromSeconds(1d / 60));
 
             // Assert
             Assert.True(this.component.MyBooleanProperty);
