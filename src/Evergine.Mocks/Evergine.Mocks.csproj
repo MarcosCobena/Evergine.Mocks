@@ -4,14 +4,17 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>2022.9.28.1</Version>
+    <Version>2022.9.28.2</Version>
     <Authors>MarcosCobena,Evergine</Authors>
     <Description>Library to enable testing applications made with Evergine.</Description>
     <PackageProjectUrl>https://github.com/MarcosCobena/Evergine.Mocks</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Initial release!</PackageReleaseNotes>
+    <PackageReleaseNotes>- add fixed game time
+It is a must to provide a fixed game time in MockWindowSystem.RunOneLoop() in order to make tests more deterministic.
+- fix Camera3D.AspectRatio -1
+The camera is updated now with the display settings, retrieving the correct screen size.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
