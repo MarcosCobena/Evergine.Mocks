@@ -12,7 +12,7 @@ namespace Evergine.Mocks
 
         public override CommandBuffer CommandBuffer()
         {
-            throw new NotImplementedException();
+            return new MockCommandBuffer();
         }
 
         public override void Dispose()

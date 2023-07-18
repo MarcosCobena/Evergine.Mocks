@@ -61,6 +61,8 @@ namespace Evergine.Mocks
                 DepthStencilTargetFlags = TextureFlags.DepthStencil,
                 SampleCount = TextureSampleCount.None,
                 RefreshRate = 60,
+                Width = width,
+                Height = height,
             };
             var swapChain = graphicsContext.CreateSwapChain(swapChainDescription);
             var graphicsPresenter = application.Container.Resolve<GraphicsPresenter>();

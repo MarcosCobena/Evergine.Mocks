@@ -4,8 +4,12 @@ namespace Evergine.Mocks
 {
     internal class MockSwapChain : SwapChain
     {
-        public MockSwapChain(SwapChainDescription swapChainDescription)
+        public MockSwapChain(GraphicsContext graphicsContext, SwapChainDescription swapChainDescription)
         {
+            this.GraphicsContext = graphicsContext;
+            this.FrameBuffer = this.GraphicsContext.Factory.CreateFrameBuffer(
+                swapChainDescription.Width,
+                swapChainDescription.Height);
         }
 
         public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

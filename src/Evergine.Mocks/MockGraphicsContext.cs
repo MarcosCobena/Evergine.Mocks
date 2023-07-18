@@ -23,7 +23,7 @@ namespace Evergine.Mocks
 
         public override SwapChain CreateSwapChain(SwapChainDescription description)
         {
-            return new MockSwapChain(description);
+            return new MockSwapChain(this, description);
         }
 
         public override bool GenerateTextureMipmapping(Texture texture)

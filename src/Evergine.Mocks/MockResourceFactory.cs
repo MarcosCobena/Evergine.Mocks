@@ -36,7 +36,7 @@ namespace Evergine.Mocks
 
         protected override FrameBuffer CreateFrameBufferInternal(FrameBufferAttachment? depthTarget, FrameBufferAttachment[] colorTargets, bool disposeAttachments)
         {
-            throw new NotImplementedException();
+            return new MockFrameBuffer(depthTarget, colorTargets);
         }
 
         protected override GraphicsPipelineState CreateGraphicsPipelineInternal(ref GraphicsPipelineDescription description)
