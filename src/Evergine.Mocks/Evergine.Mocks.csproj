@@ -1,20 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>2022.9.28.2</Version>
+    <Version>2024.10.24.1</Version>
     <Authors>MarcosCobena,Evergine</Authors>
     <Description>Library to enable testing applications made with Evergine.</Description>
     <PackageProjectUrl>https://github.com/MarcosCobena/Evergine.Mocks</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>- add fixed game time
-It is a must to provide a fixed game time in MockWindowSystem.RunOneLoop() in order to make tests more deterministic.
-- fix Camera3D.AspectRatio -1
-The camera is updated now with the display settings, retrieving the correct screen size.</PackageReleaseNotes>
+    <PackageReleaseNotes>- update Evergine references to 2024.10.24.804 (and .NET 8.0)</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,8 +26,8 @@ The camera is updated now with the display settings, retrieving the correct scre
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Evergine.Common" Version="2022.9.28.1" />
-    <PackageReference Include="Evergine.Framework" Version="2022.9.28.1" />
+    <PackageReference Include="Evergine.Common" Version="2024.10.24.804" />
+    <PackageReference Include="Evergine.Framework" Version="2024.10.24.804" />
   </ItemGroup>
 
 </Project>

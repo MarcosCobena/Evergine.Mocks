@@ -26,11 +26,11 @@ Items:
         Id: 07d3e21d-cd4b-412f-88a6-1331d8afa583
         IsEnabled: false
         MaxPitch: 1.49225616
-        MouseSensibility: 0.0299999993
+        MouseSensitivity: 0.0299999993
         MoveSpeed: 5.0
         RotationSpeed: 5.0
         TouchMoveAndOrientationRatio: 0.5
-        TouchSensibility: 1.0
+        TouchSensitivity: 1.0
         UpdateOrder: 0.5
       - !Evergine.Framework.Graphics.Camera3D,Evergine.Framework
         Id: 5b10653e-93d2-48e7-884f-a07b2ac173ee
@@ -42,9 +42,6 @@ Items:
         ClearFlags: All
         ClearStencil: 0
         Compensation: 0.0
-        DepthRange:
-          MaxDepth: 1.0
-          MinDepth: 0.0
         DisplayTag: null
         Exposure: 1.0
         FarPlane: 1000.0
@@ -79,10 +76,6 @@ Items:
         ShutterSpeed: 1.20000005
         TAU: 1.10000002
         TagFilter: null
-        UpVector:
-          X: 0.0
-          Y: 1.0
-          Z: 0.0
         UsePhysicalParameters: false
     Children: []
     Id: 9841b6b3-9c09-4b60-b442-a5c63257ee02
@@ -280,10 +273,3 @@ Managers:
     PunctualResolution: Size_512
     ShadowFilter: PCF3x3
     SpotResolution: Size_512
-  - !Evergine.Framework.Managers.VirtualScreenManager,Evergine.Framework
-    Id: b4f40b87-f84b-4aa5-a73d-f1886ee09e1c
-    Expand: true
-    IsEnabled: false
-    Stretch: Uniform
-    VirtualHeight: 0.0
-    VirtualWidth: 0.0

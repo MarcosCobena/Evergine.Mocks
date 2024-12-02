@@ -14,14 +14,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 6.0.x
+          dotnet-version: 8.0.x
       # Test reporting based on: https://rakesh-suryawanshi.medium.com/unit-testing-report-with-github-actions-7216f340044e
       - name: Test
         run: dotnet test src/Sample/Sample.Tests/Sample.Tests.csproj --logger "trx;LogFileName=test-results.trx" || true

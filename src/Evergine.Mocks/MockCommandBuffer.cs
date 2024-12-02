@@ -111,6 +111,11 @@ namespace Evergine.Mocks
             throw new NotImplementedException();
         }
 
+        public override void ResolveTexture(Texture source, Texture destination)
+        {
+            throw new NotImplementedException();
+        }
+
         public override void ResourceBarrierUnorderedAccessView(Common.Graphics.Buffer buffer)
         {
             throw new NotImplementedException();
@@ -121,28 +126,8 @@ namespace Evergine.Mocks
             throw new NotImplementedException();
         }
 
-        public override void SetIndexBuffer(Common.Graphics.Buffer buffer, IndexFormat format = IndexFormat.UInt16, uint offset = 0)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void SetResourceSet(ResourceSet resourceSet, uint index = 0, uint[] constantBufferOffsets = null!)
-        {
-            throw new NotImplementedException();
-        }
-
         public override void SetScissorRectangles(Rectangle[] rectangles)
         {
-        }
-
-        public override void SetVertexBuffer(uint slot, Common.Graphics.Buffer buffer, uint offset)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void SetVertexBuffers(Common.Graphics.Buffer[] buffers, int[] offsets)
-        {
-            throw new NotImplementedException();
         }
 
         public override void SetViewports(Viewport[] viewports)
@@ -196,7 +181,29 @@ namespace Evergine.Mocks
             throw new NotImplementedException();
         }
 
+        protected override void SetIndexBufferInternal(Common.Graphics.Buffer buffer, IndexFormat format = IndexFormat.UInt16, uint offset = 0)
+        {
+            throw new NotImplementedException();
+        }
+
         protected override void SetRaytracingPipelineStateInternal(RaytracingPipelineState pipeline)
+        {
+            throw new NotImplementedException();
+        }
+
+#pragma warning disable SA1011 // Closing square brackets should be spaced correctly
+        protected override void SetResourceSetInternal(ResourceSet resourceSet, uint index = 0, uint[]? constantBufferOffsets = null)
+#pragma warning restore SA1011 // Closing square brackets should be spaced correctly
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void SetVertexBufferInternal(uint slot, Common.Graphics.Buffer buffer, uint offset)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void SetVertexBuffersInternal(Common.Graphics.Buffer[] buffers, int[] offsets)
         {
             throw new NotImplementedException();
         }

@@ -13,7 +13,7 @@ namespace Evergine.Mocks
 
         public override IntPtr NativePointer => throw new NotImplementedException();
 
-        public override void Dispose()
+        protected override void Destroy()
         {
             throw new NotImplementedException();
         }
