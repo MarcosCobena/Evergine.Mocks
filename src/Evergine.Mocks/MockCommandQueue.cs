@@ -4,15 +4,18 @@ namespace Evergine.Mocks
 {
     internal class MockCommandQueue : CommandQueue
     {
-        public MockCommandQueue(CommandQueueType commandQueueType)
+        private readonly GraphicsContext graphicsContext;
+
+        public MockCommandQueue(CommandQueueType commandQueueType, GraphicsContext graphicsContext)
         {
+            this.graphicsContext = graphicsContext;
         }
 
         public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public override CommandBuffer CommandBuffer()
         {
-            return new MockCommandBuffer();
+            return new MockCommandBuffer(this.graphicsContext);
         }
 
         public override void Dispose()

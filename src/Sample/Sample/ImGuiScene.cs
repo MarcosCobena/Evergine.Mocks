@@ -15,7 +15,6 @@ namespace Sample
                 ////ImNodesEnabled = false,
                 ////CustomFonts = [".\\Roboto.ttf",],
             });
-            this.Managers.AddManager(new global::Evergine.Bullet.BulletPhysicManager3D());
         }
 
         protected override void CreateScene()

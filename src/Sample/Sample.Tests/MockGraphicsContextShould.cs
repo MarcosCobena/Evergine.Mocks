@@ -11,7 +11,9 @@ namespace Sample.Tests
         {
             var scene = new ImGuiScene();
             var application = new MyApplication();
-            var windowsSystem = MockWindowsSystem.Create(application, scene);
+            var windowsSystem = MockWindowsSystem.Create<ImGuiScene>(
+                application,
+                EvergineContent.Scenes.ImGuiScene_wescene);
 
             windowsSystem.RunOneLoop(TimeSpan.FromSeconds(1d / 60));
         }

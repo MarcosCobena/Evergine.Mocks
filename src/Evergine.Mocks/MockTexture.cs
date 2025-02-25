@@ -4,8 +4,8 @@ namespace Evergine.Mocks
 {
     internal class MockTexture : Texture
     {
-        public MockTexture(MockGraphicsContext mockGraphicsContext, ref TextureDescription description)
-            : base(mockGraphicsContext, ref description)
+        public MockTexture(GraphicsContext graphicsContext, ref TextureDescription description)
+            : base(graphicsContext, ref description)
         {
         }
 

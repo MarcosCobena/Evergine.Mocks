@@ -5,14 +5,12 @@ namespace Evergine.Mocks
 {
     internal class MockResourceFactory : ResourceFactory
     {
-        private MockGraphicsContext mockGraphicsContext;
-
         public MockResourceFactory(MockGraphicsContext mockGraphicsContext)
         {
-            this.mockGraphicsContext = mockGraphicsContext;
+            this.GraphicsContext = mockGraphicsContext;
         }
 
-        protected override GraphicsContext GraphicsContext => this.mockGraphicsContext;
+        protected override GraphicsContext GraphicsContext { get; }
 
         public override QueryHeap CreateQueryHeap(ref QueryHeapDescription description)
         {
@@ -21,12 +19,12 @@ namespace Evergine.Mocks
 
         protected override Common.Graphics.Buffer CreateBufferInternal(IntPtr data, ref BufferDescription description)
         {
-            return new MockBuffer(this.mockGraphicsContext, ref description);
+            return new MockBuffer(this.GraphicsContext, ref description);
         }
 
         protected override CommandQueue CreateCommandQueueInternal(CommandQueueType queueType = CommandQueueType.Graphics)
         {
-            return new MockCommandQueue(queueType);
+            return new MockCommandQueue(queueType, this.GraphicsContext);
         }
 
         protected override ComputePipelineState CreateComputePipelineInternal(ref ComputePipelineDescription description)
@@ -41,7 +39,7 @@ namespace Evergine.Mocks
 
         protected override GraphicsPipelineState CreateGraphicsPipelineInternal(ref GraphicsPipelineDescription description)
         {
-            throw new NotImplementedException();
+            return new MockGraphicsPipelineState(ref description);
         }
 
         protected override RaytracingPipelineState CreateRaytracingPipelineInternal(ref RaytracingPipelineDescription description)
@@ -61,17 +59,17 @@ namespace Evergine.Mocks
 
         protected override SamplerState CreateSamplerStateInternal(ref SamplerStateDescription description)
         {
-            return new MockSamplerState(this.mockGraphicsContext, ref description);
+            return new MockSamplerState(this.GraphicsContext, ref description);
         }
 
         protected override Shader CreateShaderInternal(ref ShaderDescription description)
         {
-            return new MockShader(this.mockGraphicsContext, ref description);
+            return new MockShader(this.GraphicsContext, ref description);
         }
 
         protected override Texture CreateTextureInternal(DataBox[] data, ref TextureDescription description, ref SamplerStateDescription samplerState)
         {
-            return new MockTexture(this.mockGraphicsContext, ref description);
+            return new MockTexture(this.GraphicsContext, ref description);
         }
 
         protected override Texture GetTextureFromNativePointerInternal(IntPtr texturePointer, ref TextureDescription textureDescription)

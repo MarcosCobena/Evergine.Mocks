@@ -8,7 +8,12 @@ namespace Evergine.Mocks
     {
         public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        protected override GraphicsContext GraphicsContext => throw new NotImplementedException();
+        protected override GraphicsContext GraphicsContext { get; }
+
+        public MockCommandBuffer(GraphicsContext graphicsContext)
+        {
+            this.GraphicsContext = graphicsContext;
+        }
 
         public override void Begin()
         {
@@ -59,12 +64,12 @@ namespace Evergine.Mocks
 
         public override void Draw(uint vertexCount, uint startVertexLocation = 0)
         {
-            throw new NotImplementedException();
+            // Intentionally empty
         }
 
         public override void DrawIndexed(uint indexCount, uint startIndexLocation = 0, uint baseVertexLocation = 0)
         {
-            throw new NotImplementedException();
+            // Intentionally empty
         }
 
         public override void DrawIndexedInstanced(uint indexCountPerInstance, uint instanceCount, uint startIndexLocation = 0, uint baseVertexLocation = 0, uint startInstanceLocation = 0)
@@ -178,12 +183,12 @@ namespace Evergine.Mocks
 
         protected override void SetGraphicsPipelineStateInternal(GraphicsPipelineState pipeline)
         {
-            throw new NotImplementedException();
+            // Intentionally empty
         }
 
         protected override void SetIndexBufferInternal(Common.Graphics.Buffer buffer, IndexFormat format = IndexFormat.UInt16, uint offset = 0)
         {
-            throw new NotImplementedException();
+            // Intentionally empty
         }
 
         protected override void SetRaytracingPipelineStateInternal(RaytracingPipelineState pipeline)
@@ -195,7 +200,7 @@ namespace Evergine.Mocks
         protected override void SetResourceSetInternal(ResourceSet resourceSet, uint index = 0, uint[]? constantBufferOffsets = null)
 #pragma warning restore SA1011 // Closing square brackets should be spaced correctly
         {
-            throw new NotImplementedException();
+            // Intentionally empty
         }
 
         protected override void SetVertexBufferInternal(uint slot, Common.Graphics.Buffer buffer, uint offset)
@@ -205,12 +210,12 @@ namespace Evergine.Mocks
 
         protected override void SetVertexBuffersInternal(Common.Graphics.Buffer[] buffers, int[] offsets)
         {
-            throw new NotImplementedException();
+            // Intentionally empty
         }
 
         protected override void UpdateBufferDataInternal(Common.Graphics.Buffer buffer, IntPtr source, uint sourceSizeInBytes, uint destinationOffsetInBytes = 0)
         {
-            throw new NotImplementedException();
+            // Intentionally empty
         }
     }
 }
