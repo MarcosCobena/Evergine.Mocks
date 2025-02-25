@@ -38,7 +38,7 @@ namespace Evergine.Mocks
 
         public override CompilationResult ShaderCompile(string shaderSource, string entryPoint, ShaderStages stage, CompilerParameters parameters)
         {
-            throw new NotImplementedException();
+            return new CompilationResult(Array.Empty<byte>(), hasErrors: false);
         }
 
         public override void UnmapMemory(GraphicsResource resource, uint subResource = 0)
@@ -48,7 +48,7 @@ namespace Evergine.Mocks
 
         public override void UpdateTextureData(Texture texture, IntPtr source, uint sourceSizeInBytes, uint subResource)
         {
-            throw new NotImplementedException();
+            // Intentionally empty
         }
 
         protected override void Dispose(bool disposing)

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -11,6 +11,7 @@
     <PackageReference Include="Evergine.Common" Version="2024.10.24.804" />
     <PackageReference Include="Evergine.Components" Version="2024.10.24.804" />
     <PackageReference Include="Evergine.Framework" Version="2024.10.24.804" />
+    <PackageReference Include="Evergine.ImGui" Version="2024.10.24.804" />
     <PackageReference Include="Evergine.Mathematics" Version="2024.10.24.804" />
     <PackageReference Include="Evergine.Bullet" Version="2024.10.24.804" />
     <PackageReference Include="Evergine.Targets" Version="2024.10.24.804" />

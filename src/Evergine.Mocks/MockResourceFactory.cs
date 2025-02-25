@@ -51,12 +51,12 @@ namespace Evergine.Mocks
 
         protected override ResourceLayout CreateResourceLayoutInternal(ref ResourceLayoutDescription description)
         {
-            throw new NotImplementedException();
+            return new MockResourceLayout(ref description);
         }
 
         protected override ResourceSet CreateResourceSetInternal(ref ResourceSetDescription description)
         {
-            throw new NotImplementedException();
+            return new MockResourceSet(ref description);
         }
 
         protected override SamplerState CreateSamplerStateInternal(ref SamplerStateDescription description)
@@ -66,7 +66,7 @@ namespace Evergine.Mocks
 
         protected override Shader CreateShaderInternal(ref ShaderDescription description)
         {
-            throw new NotImplementedException();
+            return new MockShader(this.mockGraphicsContext, ref description);
         }
 
         protected override Texture CreateTextureInternal(DataBox[] data, ref TextureDescription description, ref SamplerStateDescription samplerState)
