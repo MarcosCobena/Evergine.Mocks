@@ -8,13 +8,7 @@ namespace Sample
         public override void RegisterManagers()
         {
             base.RegisterManagers();
-            this.Managers.AddManager(new ImGuiManager()
-            {
-                ////ImGuizmoEnabled = true,
-                ////ImPlotEnabled = true,
-                ////ImNodesEnabled = false,
-                ////CustomFonts = [".\\Roboto.ttf",],
-            });
+            this.Managers.AddManager(new ImGuiManager());
         }
 
         protected override void CreateScene()
