@@ -1,3 +1,5 @@
+**IMPORTANT:** this repository has been moved to [Evergine](https://github.com/EvergineTeam), we will take care of it from there.
+
 # Evergine.Mocks
 
 [![Tests status](https://github.com/MarcosCobena/Evergine.Mocks/actions/workflows/dotnet.yml/badge.svg)](https://github.com/MarcosCobena/Evergine.Mocks/actions/workflows/dotnet.yml)
