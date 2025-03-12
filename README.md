@@ -1,4 +1,4 @@
-**IMPORTANT:** this repository has been moved to [Evergine](https://github.com/EvergineTeam), we will take care of it from there.
+**IMPORTANT:** this repository has been moved to [Evergine](https://github.com/EvergineTeam), as part of the engine it-self, which will assure more up-to-date versions.
 
 # Evergine.Mocks
 
